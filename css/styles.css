@@ -1,0 +1,226 @@
+/** css/styles.css of bbauska/eat-steak making eat-steak.bauska.org */
+body {
+  margin: 0;
+  background-color: lightskyblue;
+}
+
+details,
+div {
+  inset: unset;
+  overflow: visible;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.r1 {
+  --row: 1;
+}
+
+.r2 {
+  --row: 2;
+}
+
+.r3 {
+  --row: 3;
+}
+
+.r4 {
+  --row: 4;
+}
+
+.r5 {
+  --row: 5;
+}
+
+.r6 {
+  --row: 6;
+}
+
+.r7 {
+  --row: 7;
+}
+
+.c1 {
+  --col: 1;
+}
+
+.c2 {
+  --col: 2;
+}
+
+.c3 {
+  --col: 3;
+}
+
+.c4 {
+  --col: 4;
+}
+
+.c5 {
+  --col: 5;
+}
+
+.c6 {
+  --col: 6;
+}
+
+.c7 {
+  --col: 7;
+}
+
+.steak {
+  position: absolute;
+  display: block;
+  font-size: 4em;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  height: 1em;
+  width: 1em;
+  top: calc(12.5vh * (var(--row) + 1) - 12.5vh);
+  left: calc(12.5vw * (var(--col) + 1) - 12.5vw);
+  list-style-type: none;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  scale: 1;
+}
+
+.steak:active {
+  scale: 0.7;
+  transition: 0.5s;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+#root1:not([open]),
+#root2:not([open]) {
+  display: none;
+}
+
+#congrats,
+#fail,
+#instructions {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+#fail {
+  display: flex;
+  opacity: 0;
+  z-index: -1;
+}
+
+#game:target #fail {
+  animation: 0.5s fadein forwards 60s;
+}
+
+#game:target #bar {
+  animation: 60s timebar forwards;
+}
+
+#game:target #instructions {
+  display: none;
+}
+
+#instructions {
+  display: flex;
+  z-index: 10;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+.msg {
+  background-color: #e60b0b;
+  color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+  border: 0.25em solid #760b0b;
+  overflow: hidden;
+  max-width: 20em;
+}
+
+#congrats .msg .btn,
+#fail .msg .btn {
+  float: none;
+  display: block;
+}
+
+.msg h1 {
+  margin-top: 0;
+}
+
+#game:has(#root1:not([open])):has(#root2:not([open])) #congrats {
+  display: flex;
+}
+
+#game:has(#root1:not([open])):has(#root2:not([open])) #fail,
+#game:has(#root1:not([open])):has(#root2:not([open])) #bar {
+  display: none;
+}
+
+#game:has(#root1:not([open])):has(:popover-open):has(#root2:not([open])):has(:popover-open)
+  #fail {
+  display: flex;
+}
+
+#game:has(#root1:not([open])):has(:popover-open):has(#root2:not([open])):has(:popover-open)
+  #bar {
+  display: block;
+}
+
+#game:has(#root1:not([open])):has(:popover-open):has(#root2:not([open])):has(:popover-open)
+  #congrats {
+  display: none;
+}
+
+.btn {
+  float: right;
+  background-color: white;
+  color: #e60b0b;
+  text-decoration: none;
+  padding: 0.25em 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+#timer {
+  width: 100vw;
+  height: 1em;
+}
+
+#bar {
+  background-color: #e60b0b;
+  width: 100vw;
+  height: 1em;
+  transform-origin: right;
+}
+
+@keyframes timebar {
+  0% {
+    scale: 1 1;
+  }
+
+  100% {
+    scale: 0 1;
+  }
+}
