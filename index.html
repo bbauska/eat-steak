@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <title>Pop(eat) the Steak - Final</title>
+  <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html --><div id="game">
+  <div id="timer">
+    <div id="bar"></div>
+  </div>
+  <div id="instructions">
+    <div class="msg">
+      <h1>Pop(over) the Steaks</h1>
+      You have 2 minutes to eat as many steaks as possible. But it's not as simple as it sounds. Some
+      steaks
+      create more steaks and some steaks eat other steaks.
+      <a class="btn" href="#game">Go!</a>
+    </div>
+  </div>
+  <details open id="root1">
+    <summary class="steak r4 c5">🥩</summary>
+    <button class="steak r2 c2" popovertarget="pop1" popovertargetaction="show">🥩</button>
+    <details open>
+      <summary class="steak r6 c6">🥩</summary>
+      <button class="steak r1 c4" popovertarget="pop5" popovertargetaction="show">🥩</button>
+    </details>
+    <button class="steak r1 c5" popovertarget="pop3" popovertargetaction="show">🥩</button>
+    <details open>
+      <summary class="steak r2 c6">🥩</summary>
+      <button class="steak r7 c3" popovertarget="pop4" popovertargetaction="show">🥩</button>
+      <button class="steak r3 c4" popovertarget="pop1" popovertargetaction="hide">🥩</button>
+    </details>
+  </details>
+  <details open id="root2">
+    <summary class="steak r4 c6">🥩</summary>
+    <button class="steak r3 c7" popovertarget="pop2" popovertargetaction="show">🥩</button>
+    <details open>
+      <summary class="steak r2 c3">🥩</summary>
+      <button class="steak r6 c1" popovertarget="pop1" popovertargetaction="show">🥩</button>
+    </details>
+    <button class="steak r5 c4" popovertarget="pop4" popovertargetaction="show">🥩</button>
+    <details open>
+      <summary class="steak r7 c7">🥩</summary>
+      <button class="steak r5 c2" popovertarget="pop1" popovertargetaction="show">🥩</button>
+      <button class="steak r3 c1" popovertarget="pop2" popovertargetaction="hide">🥩</button>
+    </details>
+  </details>
+  <div id="pop1" popover="manual">
+    <button class="steak r4 c2" popovertarget="pop1" popovertargetaction="hide">🥩</button>
+  </div>
+  <dialog id="pop2" popover="manual">
+    <button class="steak r3 c3" popovertarget="pop2" popovertargetaction="hide">🥩</button>
+    <button class="steak r1 c1" popovertarget="pop4" popovertargetaction="hide">🥩</button>
+  </dialog>
+  <div id="pop3" popover="manual">
+    <button class="steak r5 c5" popovertarget="pop4" popovertargetaction="hide">🥩</button>
+    <button class="steak r6 c2" popovertarget="pop3" popovertargetaction="hide">🥩</button>
+  </div>
+  <div id="pop4" popover="manual">
+    <button class="steak r7 c2" popovertarget="pop4" popovertargetaction="hide">🥩</button>
+    <button class="steak r6 c5" popovertarget="pop2" popovertargetaction="hide">🥩</button>
+  </div>
+  <div id="pop5" popover="manual">
+    <button class="steak r4 c7" popovertarget="pop4" popovertargetaction="hide">🥩</button>
+    <button class="steak r5 c3" popovertarget="pop5" popovertargetaction="hide">🥩</button>
+  </div>
+  <div id="congrats">
+    <div class="msg">
+      You popped them all!<br>
+      <a class="btn" href="">Play Again!</a>
+    </div>
+  </div>
+  <div id="fail">
+    <div class="msg">
+      Unlike Pokemon, you didn't eat 'em all...<br>
+      Refresh your browser to try again.<br>
+      <a class="btn" href="">Play Again!</a>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
