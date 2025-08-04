@@ -1,7 +1,7 @@
 /** css/styles.css of bbauska/eat-steak making eat-steak.bauska.org */
 body {
   margin: 0;
-  background-color: lightskyblue;
+  background-color: #87cefa;   /* lightskyblue; */
 }
 
 details,
@@ -149,11 +149,11 @@ details summary::-webkit-details-marker {
 }
 
 .msg {
-  background-color: #e60b0b;
-  color: #fff;
+  background-color: #e60b0b;  /* vivid red */
+  color: #fff;  /* white */
   padding: 1em;
   border-radius: 0.5em;
-  border: 0.25em solid #760b0b;
+  border: 0.25em solid #760b0b;  /* dark red */
   overflow: hidden;
   max-width: 20em;
 }
@@ -194,8 +194,8 @@ details summary::-webkit-details-marker {
 
 .btn {
   float: right;
-  background-color: white;
-  color: #e60b0b;
+  background-color: #000000;  /* white */
+  color: #e60b0b;  /* vivid red */
   text-decoration: none;
   padding: 0.25em 0.5em;
   margin-top: 0.5em;
@@ -209,7 +209,7 @@ details summary::-webkit-details-marker {
 }
 
 #bar {
-  background-color: #e60b0b;
+  background-color: #e60b0b;  /* vivid red */
   width: 100vw;
   height: 1em;
   transform-origin: right;
